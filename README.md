@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Helios Technical Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+Helios is designed to revolutionize cryptocurrency mining by integrating the TitanX protocol, a system known for its supply reduction and buy-pressure mechanisms. Unlike traditional mining platforms that use ETH, Helios utilizes TITANX for mining operations, offering a unique approach to cryptocurrency participation and asset growth.
 
-## Available Scripts
+![Preview](public/readme.png)
+---
 
-In the project directory, you can run:
+## Objective
+This technical task evaluates a candidate’s ability to understand an existing codebase, improve it, and deliver a working solution using engineering best practices relevant to their specialization.
+Rather than relying on abstract interview questions, this assessment focuses on practical, real-world skills. Candidates will work with a production-style project, review existing logic (including blockchain integrations where applicable), identify meaningful improvements, and clearly explain their technical decisions.
+We prioritize **depth of understanding, clarity of reasoning, and sound engineering judgment** over the number or size of changes made.
 
-### `npm start`
+---
+## Deliverables
+You are required to submit two deliverables that demonstrate both your technical skills and your analytical thinking:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🎥 Live Coding Recording
+- Record your screen while completing the task
+- Duration: approximately **30 minutes**
+---
+### 📄 Project Feedback Document
+- Provide a document evaluating the project and your solution. Include your observations on: Code Quality, Architecture, UI/UX, Performance, Security and suggestions and improvements on your vision.
+- Submission format: link(loom), PDF, or DOCX file
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Development Environment & Tools
+- Node.js **v20 or higher**
+- Code Editor: **VS Code** or **Cursor**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## How to Run the Project
 
-### `npm run build`
+Follow the steps below to run the project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install dependencies
+   ```bash
+   npm install
+2. Run the project
+   ```bash 
+   npm start
+   
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Task Instructions
+You will work within an existing project that includes several pages such as Mine, Stake, and Reward Pools. Your task is focused on identifying and fixing issues on the Stake page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Requirements
 
-### `npm run eject`
+1. Run the project and navigate to the **Stake** page.
+2. Fix the **"Max" button** so that clicking it sets the input value to **250**.
+3. Adjust the styling of the **Max button** and the **input field** so they appear visually consistent and aligned.
+4. Fix the **"Connect To Stake" button** so it performs its intended function correctly.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Notes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Do **not** use AI or AI tools while completing this task.
+- Keep your solution clean, maintainable, and consistent with the existing codebase.
+- Verify that your changes work correctly and do not break existing functionality.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Time Estimate 
 
-## Learn More
+30min ~ 1 hour
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+**Good luck, and we look forward to reviewing your work.**
