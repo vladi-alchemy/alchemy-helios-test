@@ -56,7 +56,6 @@ You will work within an existing project that includes several pages such as Min
 
 ### Notes
 
-- Do **not** use AI or AI tools while completing this task.
 - Keep your solution clean, maintainable, and consistent with the existing codebase.
 - Verify that your changes work correctly and do not break existing functionality.
 
