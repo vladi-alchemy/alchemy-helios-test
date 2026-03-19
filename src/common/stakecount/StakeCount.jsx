@@ -31,20 +31,19 @@ const StakeCount = ({
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = () => {
         setCheckSuccess(false);
-        if (e.keyCode === 8 || e.key === "BackSpace") {
-            setInputValue('');
-        }
-        // if (e.key === ".") {
-        //     setErrorMessage('Dot or space is not allowed');
-        //     setInputValue(1);
-        // }
     };
 
     const handleInputChange = (e) => {
         setCheckSuccess(false);
         const value = e.target.value;
+
+        if (value === "") {
+            setInputValue(0);
+            return;
+        }
+
         if (inputType !== "stakePower") {
             if (value.includes('.') || value.includes(' ')) {
                 setInputValue("1");
@@ -54,6 +53,8 @@ const StakeCount = ({
                 setErrorMessage('');
             }
         }
+
+        const numValue = parseFloat(value);
         let maxValue = 0;
         if (inputType == "stakeLength") {
             maxValue = 830;
@@ -61,13 +62,16 @@ const StakeCount = ({
             maxValue = 20;
         } else {
             maxValue = parseFloat(max);
+            if (isNaN(maxValue) || maxValue === 0) {
+                maxValue = Infinity;
+            }
         }
-        if (e.target.value > maxValue) {
-            setInputValue(max);
-        } else if (e.target.value < min) {
-            setInputValue(min);
+
+        if (!isNaN(numValue) && numValue > maxValue) {
+            const clampedValue = inputType === "stakePower" ? String(max) : String(maxValue);
+            setInputValue(clampedValue);
         } else {
-            setInputValue(e.target.value);
+            setInputValue(value);
         }
     };
 

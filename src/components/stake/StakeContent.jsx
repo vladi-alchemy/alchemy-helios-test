@@ -15,6 +15,7 @@ import {
 import heliosContract from "../../contract/helios.json";
 import buyAndBurnContract from "../../contract/buyandburn.json";
 import titanx from "../../contract/titanx.json";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 import {
     useContractReads,
@@ -101,6 +102,7 @@ const StakeContent = () => {
     const [getUserEndedStakes, setGetUserEndedStakes] = useState([]);
 
     const { isConnected, address } = useAccount();
+    const { openConnectModal } = useConnectModal();
 
     const heliosContractObj = {
         address: HeliosAddress,
@@ -377,7 +379,9 @@ const StakeContent = () => {
                                             type="stakePower"
                                             active="1"
                                             max={
-                                                userBalance ? `${ethers.utils.formatEther(userBalance)}` : 0
+                                                userBalance
+                                                    ? String(Math.min(parseFloat(ethers.utils.formatEther(userBalance)), 250))
+                                                    : "250"
                                             }
                                             min="0"
                                             tooltip={
@@ -418,15 +422,21 @@ const StakeContent = () => {
                                         <div className="create_miner_btn">
                                             <button
                                                 disabled={
-                                                    !(isConnected && !(stakeLoading || approveLoading || isConfirmed))
+                                                    isConnected
+                                                        ? stakeLoading || approveLoading || isConfirmed
+                                                        : !openConnectModal
                                                 }
                                                 onClick={() => {
-                                                    stakeAmplifier && stakeAmplifier > 0
-                                                        ? aproveAndWrite()
-                                                        : stakeWrite({ from: address });
+                                                    if (!isConnected && openConnectModal) {
+                                                        openConnectModal();
+                                                    } else {
+                                                        stakeAmplifier && stakeAmplifier > 0
+                                                            ? aproveAndWrite()
+                                                            : stakeWrite({ from: address });
+                                                    }
                                                 }}
                                             >
-                                                {isConnected ? "Start Stake" : "Connect To Start Stake"}
+                                                {isConnected ? "Start Stake" : "Connect To Stake"}
                                             </button>
                                         </div>
                                     </div>
