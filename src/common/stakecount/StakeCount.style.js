@@ -19,10 +19,10 @@ margin-bottom: 20px;
     }
     .miner-container {
         position: relative;
-        display: inline-flex;
+        display: flex;
         width: 100%;
-        justify-content: center;
         align-items: center;
+        gap: 12px;
         .tooltip_header_text {
             padding-left: 15px;
             width: 70%;
@@ -39,32 +39,49 @@ margin-bottom: 20px;
                 text-align:center;
             }
         }
-        .max_button {
-            width: 60px;
-            padding-top: 9px;
-            padding-bottom: 9px;
-            background-color: #BA3505;
-            border: 1px solid #FE9C01;
-            border-radius: 30px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-        }
-
         .count_input {
-            width: 17%;
-            margin-right: 1%;
-            height: 15px;
-            padding: 10px;
-            border: 2px solid #fff;
-            border-radius: 5px;
+            flex: 1;
+            min-width: 80px;
+            height: 40px;
+            padding: 0 14px;
+            border: 1px solid #FE9C01;
+            border-radius: 8px;
             outline: none;
             font-size: 16px;
+            font-weight: 500;
+            color: white;
+            background-color: rgba(43, 2, 0, 0.9);
             transition: border-color 0.3s ease;
+            box-sizing: border-box;
         }
 
         .count_input:focus {
-            border-color: #000;
+            border-color: #fff;
+        }
+
+        .count_input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .max_button {
+            width: 60px;
+            height: 40px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #BA3505;
+            border: 1px solid #FE9C01;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .max_button:hover {
+            background-color: #d13d06;
         }
 
     }
